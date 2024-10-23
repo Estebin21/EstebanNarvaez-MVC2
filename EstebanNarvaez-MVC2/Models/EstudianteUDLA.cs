@@ -1,10 +1,14 @@
-﻿namespace EstebanNarvaez_MVC2.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EstebanNarvaez_MVC2.Models
 {
     public class EstudianteUDLA
     {
         public String IdBanner { get; set; }
-
-        public String? Nombre { get; set; }
-        public Carrera carrera { get; set; }
+        [MaxLength(100)]
+        public String Nombre { get; set; }
+        [EmailAddress]
+        public String Correo { get; set; }
+        public Carrera Carrera { get; set; }
     }
 }
